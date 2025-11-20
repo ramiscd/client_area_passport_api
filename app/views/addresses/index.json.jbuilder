@@ -1,11 +1,4 @@
-json.name @user.name
-
-json.passport_statuses @user.passport_statuses do |status|
-  json.name status.name
-  json.current status.current
-end
-
-json.addresses @user.addresses do |address|
+json.array! @addresses do |address|
   json.id address.id
   json.street address.street
   json.city address.city
