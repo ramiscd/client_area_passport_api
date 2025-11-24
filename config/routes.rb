@@ -1,4 +1,13 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
+
+
+  Rails.application.routes.draw do
+    mount Sidekiq::Web => "/sidekiq"
+  end
+
+
   post "auth/login", to: "auth#login"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html1
 
